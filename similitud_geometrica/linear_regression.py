@@ -3,7 +3,7 @@ from numpy._typing import NDArray
 import math
 
 
-def rls(x: list[float], y: list[float]) -> float:
+def rls(x: list[float] | NDArray, y: list[float] | NDArray) -> float:
     """
     Regresión lineal para un modelo de la forma y = kx
 
@@ -30,7 +30,9 @@ def rls(x: list[float], y: list[float]) -> float:
     return k
 
 
-def rlm(x1: list[float], x2: list[float], y: list[float]) -> NDArray:
+def rlm(
+    x1: list[float] | NDArray, x2: list[float] | NDArray, y: list[float] | NDArray
+) -> NDArray:
     """
     Regresión lineal para un modelo de la forma y = ax1 + bx2
 
@@ -71,7 +73,7 @@ def rlm(x1: list[float], x2: list[float], y: list[float]) -> NDArray:
     return params
 
 
-def pearson(x: list[float], y: list[float]) -> float:
+def pearson(x: list[float] | NDArray, y: list[float] | NDArray) -> float:
     """
     Calcula el coeficiente de Pearson
 
@@ -102,7 +104,7 @@ def pearson(x: list[float], y: list[float]) -> float:
     return coef
 
 
-def calc_error(pred: list[float], truth: list[float]) -> float:
+def calc_error(pred: list[float] | NDArray, truth: list[float] | NDArray) -> float:
     """
     Calcula el error entre una predicción y la verdad de los datos
 
